@@ -1,0 +1,127 @@
+nav{
+	font-family: 'Varela Round';
+	padding:15px 30px;
+	background-color: $bgNav;
+	display: flex;
+	justify-content:flex-start;
+	align-items: center;
+}
+.logo{
+	display: flex;
+	flex-direction: row;
+	text-transform: uppercase;
+	align-items: center;
+	color: $textColor;
+}
+.nav-list{
+	display: flex;
+	list-style: none;
+	justify-self: flex-start;
+	flex-wrap: wrap;
+}
+.nav-list li{
+	margin-left: 30px;
+}
+.nav-list li a {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 1.1em;
+	color: $textColor;
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	padding: 2.5%;
+
+	&::after{
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: -100%;
+		width: 100%;
+		height: 2px;
+		background: $primary;
+		transition: left 600ms;
+	}
+	&:hover::after{
+		left: 0;
+	}
+
+}
+#hamburger-toggle{
+	display: none;
+}
+.hamburger{
+	width: 30px;
+	height: 30px;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	position: absolute;
+	right: 25px;
+
+	.bar{
+		display: inline-block;
+		width: 30px;
+		height: 2px;
+		background-color: $textColor;
+		position: relative;
+		transition: all 300ms ease;
+
+		&::before,
+		&::after{
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: $textColor;
+			transition: all 300ms ease;
+		}
+		&::before{
+			transform: translateY(-10px);
+		}
+		&::after{
+			transform: translateY(10px);
+		}
+	}
+}
+
+@media screen and ( max-width: 768px ){
+	.nav-list{
+		position: fixed !important;
+		top: 0 !important;
+		left: 0;
+		width: 91%;
+		height: 100vh !important;
+		background-color: $bgNav;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		transform: translateX(111%);
+		transition: transform 400ms ease-in-out;
+		z-index: 98;
+	}
+	.logo{
+		font-size: 1.7em;
+	}
+	.nav-list li{
+		margin: 10px 0;
+	}
+	.nav-list li a{
+		font-size: 20px;
+		padding: 15px 20px;
+	}
+	.hamburger{
+		padding: 10px;
+		display: flex;
+		box-sizing: content-box;
+		z-index: 99;
+	}
+	#hamburger-toggle:checked ~ .nav-list{ transform: translate(10%); }
+	#hamburger-toggle:checked ~ .hamburger .bar::before{ transform: rotate(45deg); }
+	#hamburger-toggle:checked ~ .hamburger .bar{ background-color: transparent; }
+	#hamburger-toggle:checked ~ .hamburger .bar::after{ transform: rotate(-45deg); }
+	#hamburger-toggle:checked ~ .hamburger{ position: fixed; }
+
+}

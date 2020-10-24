@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+//
+import Footer from './components/Footer'
+import Gifts from './components/Gifts'
+import MainBanner from './components/MainBanner'
+import Navbar from './components/Navbar'
+import Offers from './components/Offers'
+import Products from './components/Products'
+import Publication from './components/Publication'
+import { InstragramProvider } from './context/InstragramProvider'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App = () => {
+
+	return (
+		<InstragramProvider >
+			<Navbar />
+
+			<main>
+				<MainBanner 
+					title='Pasteleria, Bebidas y Regalos'
+					slogan='Hechos con amor y esfuerzo'
+				/>
+				
+				<Offers />
+
+				<Products />
+
+				<Publication />
+
+				<Gifts />
+
+				<Footer />
+			</main>
+		</InstragramProvider>
+	)
 }
 
-export default App;
+export default App

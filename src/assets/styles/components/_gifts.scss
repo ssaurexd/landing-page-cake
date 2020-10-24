@@ -1,0 +1,109 @@
+.gift{
+	width: 100%;
+	padding: 2.5%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+
+	.disableLink{
+		pointer-events: none;
+		cursor: default;
+		background-color: darken($secondary, $amount: 40);
+		color: #ccc;
+		border: 1px solid darken($secondary, $amount: 40) ;
+	}
+
+	.gift__title{
+		font-size: 44px;
+		font-weight: bold;
+		color: $brown;
+		font-family: Pacifico, cursive;
+		text-align: center;
+		margin: 60px 0 !important;
+	}
+	.gift-form{
+		width:60%;
+		min-height: 500px;
+		align-self: center;
+		border-radius: 4px;
+		box-shadow: -4px -4px 7px hsla(0,0%,100%,.313725), 3px 3px 5px rgba(94,104,121,.288);
+		display: flex;
+		padding: 2.5%;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		border: 1px solid rgba(94,104,121,.288);
+		font-family: Roboto;
+		color: #262626;
+
+		.group{
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: row;
+		}
+
+		.input-group{
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		#gift-name,
+		#gift-phone{
+			width: 50%;
+			flex-direction: row;
+		}
+		input{
+			width: 100%;
+			min-height: 10px;
+			height: 15px;
+			padding: 2.5%;
+			box-sizing: border-box;
+			margin: 10px 0;
+			border: none;
+			border-bottom: 2px solid $secondary !important;
+			color: #898989 !important;
+			
+			&:focus{
+				border: none;
+				border-bottom: 2px solid darken($secondary, $amount: 35) !important;
+				color: darken($color: #898989, $amount: 10) !important;
+			}
+		}
+		textarea{
+			width: 100%;
+			margin: 10px auto;
+			border-radius: 4px;
+			padding: 2.5%;
+			border: 2px solid $secondary;
+			color: #898989;
+			
+			&:focus{
+				border: 2px solid darken($secondary, $amount: 35);
+				color: darken($color: #898989, $amount: 10);
+			}
+		}
+	}
+}
+
+@media screen and ( max-width: 768px ){
+	.gift{
+		.gift-form{
+			width: 100%;
+			border: none;
+			
+			input{
+				padding: 12px 0;
+			}
+			.group{
+				flex-direction: column;
+			}
+			#gift-name,
+			#gift-phone{
+				width: 100%;
+			}
+		}
+	}
+}

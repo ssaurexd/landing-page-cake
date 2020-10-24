@@ -1,0 +1,84 @@
+.main-banner{
+	height: 50vh;
+	background:  url(../../images/baner.jpg) no-repeat top center;
+	background-attachment: fixed;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+.main-banner__title-container{
+	text-align: center;
+	font-family: Roboto;
+}
+.main-banner__title{
+	font-size: 34px;
+	font-weight: bold;
+	font-family: Pacifico, cursive;
+	color: $textColor;
+	text-shadow: 2px 0 0 $primary, 
+				-2px 0 0 $primary, 
+				0 2px 0 $primary, 
+				0 -2px 0 $primary, 
+				1px 1px $primary, 
+				-1px -1px 0 $primary, 
+				1px -1px 0 $primary, 
+				-1px 1px 0 $primary;
+}
+.main-banner__slogan{
+	font-size: 20px;
+	font-weight: normal;
+	text-shadow: 2px 0 0 $primary, 
+				-2px 0 0 $primary, 
+				0 2px 0 $primary, 
+				0 -2px 0 $primary, 
+				1px 1px $primary, 
+				-1px -1px 0 $primary, 
+				1px -1px 0 $primary, 
+				-1px 1px 0 $primary;
+}
+
+//styles de el shape divider
+.custom-shape-divider-top-1603404123 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1603404123 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 34px;
+}
+
+.custom-shape-divider-top-1603404123 .shape-fill {
+    fill: $secondary;
+}
+
+
+//botom divider
+.custom-shape-divider-bottom-1603406167 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1603406167 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 34px;
+}
+
+.custom-shape-divider-bottom-1603406167 .shape-fill {
+    fill: white;
+}
